@@ -56,17 +56,18 @@ Varies depending on inputs.
 - name: Test
   id: yaml
   uses: benlei/yaml2outputs@v1
-  with: |
-    foo:
-      bar:
-        - 1
-        - 2
-        - 3
-    hello:
-      world: abc
-      example.com/foobar: bye
-      'yes': true
-      'no': false
+  with:
+    yaml: |
+      foo:
+        bar:
+          - 1
+          - 2
+          - 3
+      hello:
+        world: abc
+        example.com/foobar: bye
+        'yes': true
+        'no': false
 
 - name: Output value:
   run: |

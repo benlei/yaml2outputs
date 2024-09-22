@@ -41,8 +41,8 @@ Should output the following:
 
 | Input Name | Required | Default | Description                                                      |
 | ---------- | -------- | ------- | ---------------------------------------------------------------- |
-| yaml       | no       | ''      | The YAML body (string) to parse                                  |
-| file       | no       | ''      | The YAML file to parse. Ignored if `yaml` has a non-empty value. |
+| `yaml`     | no       | ''      | The YAML body (string) to parse                                  |
+| `file`     | no       | ''      | The YAML file to parse. Ignored if `yaml` has a non-empty value. |
 
 <!-- markdownlint-enable MD013 -->
 

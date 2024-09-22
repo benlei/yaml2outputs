@@ -86,3 +86,8 @@ jobs:
             echo "hello.example.com/foobar is not bye"
             exit 1
           fi
+
+          if [ "${{ steps.test-action.outputs['hello.yes'] }}" != "true" ]; then
+            echo "hello.yes is not true"
+            exit 1
+          fi

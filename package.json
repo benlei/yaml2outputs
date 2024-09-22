@@ -1,16 +1,16 @@
 {
-  "name": "typescript-action",
-  "description": "GitHub Actions TypeScript template",
-  "version": "0.0.0",
-  "author": "",
+  "name": "yaml2outputs",
+  "description": "This action will read in a YAML body / file and set them as outputs",
+  "version": "1.0.0",
+  "author": "benlei",
   "private": true,
-  "homepage": "https://github.com/actions/typescript-action",
+  "homepage": "https://github.com/benlei/yaml2outputs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/benlei/yaml2outputs.git"
   },
   "bugs": {
-    "url": "https://github.com/actions/typescript-action/issues"
+    "url": "https://github.com/benlei/yaml2outputs/issues"
   },
   "keywords": [
     "actions",
@@ -66,7 +66,8 @@
     ]
   },
   "dependencies": {
-    "@actions/core": "^1.10.1"
+    "@actions/core": "^1.10.1",
+    "yaml": "^2.5.1"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",

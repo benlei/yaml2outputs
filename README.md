@@ -41,8 +41,8 @@ Should output the following:
 
 | Input Name | Required | Default | Description                                                      |
 | ---------- | -------- | ------- | ---------------------------------------------------------------- |
-| `yaml`     | no       | ''      | The YAML body (string) to parse                                  |
-| `file`     | no       | ''      | The YAML file to parse. Ignored if `yaml` has a non-empty value. |
+| `yaml`     | no       | `''`    | The YAML body (string) to parse                                  |
+| `file`     | no       | `''`    | The YAML file to parse. Ignored if `yaml` has a non-empty value. |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -51,6 +51,8 @@ Should output the following:
 Varies depending on inputs.
 
 ## Example
+
+### Passing in a raw YAML body
 
 ```yaml
 - name: Test
@@ -68,6 +70,20 @@ Varies depending on inputs.
         example.com/foobar: bye
         'yes': true
         'no': false
+
+- name: Output value:
+  run: |
+    echo ${{ steps.yaml.outputs['hello["example.com/foobar"]'] }}
+```
+
+### Passing in a YAML file
+
+```yaml
+- name: Test
+  id: yaml
+  uses: benlei/yaml2outputs@v1
+  with:
+    file: ./some.yaml
 
 - name: Output value:
   run: |

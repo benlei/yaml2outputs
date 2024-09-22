@@ -7,7 +7,7 @@
 [![Coverage](./badges/coverage.svg)](./badges/coverage.svg)
 
 Reads in a `yaml` input (or `file` input) and tries to output its values in dot
-notation. Note that if the yaml/file is a primitive/missing/has errors, nothing
+notation. Note that if the YAML/file is a primitive/missing/has errors, nothing
 will be output.
 
 For example given the YAML:

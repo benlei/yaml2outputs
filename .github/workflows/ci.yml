@@ -82,50 +82,50 @@ jobs:
             exit 1
           fi
 
-          test-yaml:
-            name: Test yaml input
-            runs-on: ubuntu-latest
+  test-yaml:
+    name: Test yaml input
+    runs-on: ubuntu-latest
 
-            steps:
-              - name: Checkout
-                id: checkout
-                uses: actions/checkout@v4
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
 
-              - name: Test Local Action
-                id: test-action
-                uses: ./
-                with:
-                  yaml: |
-                    foo:
-                      bar:
-                        - 1
-                        - 2
-                        - 3
-                    hello:
-                      world: abc
-                      example.com/foobar: bye
-                      'yes': true
-                      'no': false
+      - name: Test Local Action
+        id: test-action
+        uses: ./
+        with:
+          yaml: |
+            foo:
+              bar:
+                - 1
+                - 2
+                - 3
+            hello:
+              world: abc
+              example.com/foobar: bye
+              'yes': true
+              'no': false
 
-              - name: Confirm outputs
-                id: output
-                run: |
-                  if [ "${{ steps.test-action.outputs['foo.bar[1]'] }}" != "2" ]; then
-                    echo "foo.bar[1] is not 2"
-                    exit 1
-                  fi
+      - name: Confirm outputs
+        id: output
+        run: |
+          if [ "${{ steps.test-action.outputs['foo.bar[1]'] }}" != "2" ]; then
+            echo "foo.bar[1] is not 2"
+            exit 1
+          fi
 
-                  if [ "${{ steps.test-action.outputs['hello.world'] }}" != "abc" ]; then
-                    echo "hello.world is not abc"
-                    exit 1
-                  fi
+          if [ "${{ steps.test-action.outputs['hello.world'] }}" != "abc" ]; then
+            echo "hello.world is not abc"
+            exit 1
+          fi
 
-                  if [ "${{ steps.test-action.outputs['hello["example.com/foobar"]'] }}" != "bye" ]; then
-                    echo "hello.example.com/foobar is not bye"
-                    exit 1
-                  fi
+          if [ "${{ steps.test-action.outputs['hello["example.com/foobar"]'] }}" != "bye" ]; then
+            echo "hello.example.com/foobar is not bye"
+            exit 1
+          fi
 
-                  if [ "${{ steps.test-action.outputs['hello.yes'] }}" != "true" ]; then
-                    echo "hello.yes is not true"
-                    exit 1
-                  fi
+          if [ "${{ steps.test-action.outputs['hello.yes'] }}" != "true" ]; then
+            echo "hello.yes is not true"
+            exit 1
+          fi
